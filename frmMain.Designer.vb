@@ -23,6 +23,7 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnHide = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -32,17 +33,18 @@ Partial Class frmMain
         Me.pbColor = New System.Windows.Forms.PictureBox()
         Me.btnChange = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbCover = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cdBG = New System.Windows.Forms.ColorDialog()
         Me.mdNI = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.cmsRight = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.显示隐藏界面ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.llbOfficialSite = New System.Windows.Forms.LinkLabel()
         Me.llbAbout = New System.Windows.Forms.LinkLabel()
-        Me.cbCover = New System.Windows.Forms.CheckBox()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.显示隐藏界面ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cbEnhance = New System.Windows.Forms.CheckBox()
         CType(Me.tbTrans, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbColor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -124,6 +126,7 @@ Partial Class frmMain
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbEnhance)
         Me.GroupBox1.Controls.Add(Me.cbCover)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -138,6 +141,16 @@ Partial Class frmMain
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "外观选项"
+        '
+        'cbCover
+        '
+        Me.cbCover.AutoSize = True
+        Me.cbCover.Location = New System.Drawing.Point(220, 103)
+        Me.cbCover.Name = "cbCover"
+        Me.cbCover.Size = New System.Drawing.Size(84, 16)
+        Me.cbCover.TabIndex = 10
+        Me.cbCover.Text = "覆盖状态栏"
+        Me.cbCover.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -157,13 +170,24 @@ Partial Class frmMain
         '
         Me.cmsRight.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiExit, Me.ToolStripMenuItem1, Me.显示隐藏界面ToolStripMenuItem})
         Me.cmsRight.Name = "cmsRight"
-        Me.cmsRight.Size = New System.Drawing.Size(154, 76)
+        Me.cmsRight.Size = New System.Drawing.Size(154, 54)
         '
         'tsmiExit
         '
         Me.tsmiExit.Name = "tsmiExit"
-        Me.tsmiExit.Size = New System.Drawing.Size(124, 22)
+        Me.tsmiExit.Size = New System.Drawing.Size(153, 22)
         Me.tsmiExit.Text = "完全退出"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(150, 6)
+        '
+        '显示隐藏界面ToolStripMenuItem
+        '
+        Me.显示隐藏界面ToolStripMenuItem.Name = "显示隐藏界面ToolStripMenuItem"
+        Me.显示隐藏界面ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.显示隐藏界面ToolStripMenuItem.Text = "显示/隐藏界面"
         '
         'btnUpdate
         '
@@ -194,26 +218,15 @@ Partial Class frmMain
         Me.llbAbout.TabStop = True
         Me.llbAbout.Text = "关于"
         '
-        'cbCover
+        'cbEnhance
         '
-        Me.cbCover.AutoSize = True
-        Me.cbCover.Location = New System.Drawing.Point(220, 103)
-        Me.cbCover.Name = "cbCover"
-        Me.cbCover.Size = New System.Drawing.Size(84, 16)
-        Me.cbCover.TabIndex = 10
-        Me.cbCover.Text = "覆盖状态栏"
-        Me.cbCover.UseVisualStyleBackColor = True
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(150, 6)
-        '
-        '显示隐藏界面ToolStripMenuItem
-        '
-        Me.显示隐藏界面ToolStripMenuItem.Name = "显示隐藏界面ToolStripMenuItem"
-        Me.显示隐藏界面ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.显示隐藏界面ToolStripMenuItem.Text = "显示/隐藏界面"
+        Me.cbEnhance.AutoSize = True
+        Me.cbEnhance.Location = New System.Drawing.Point(142, 103)
+        Me.cbEnhance.Name = "cbEnhance"
+        Me.cbEnhance.Size = New System.Drawing.Size(72, 16)
+        Me.cbEnhance.TabIndex = 13
+        Me.cbEnhance.Text = "增强模式"
+        Me.cbEnhance.UseVisualStyleBackColor = True
         '
         'frmMain
         '
@@ -228,6 +241,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.btnHide)
         Me.Controls.Add(Me.btnStart)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -261,5 +275,6 @@ Partial Class frmMain
     Friend WithEvents cbCover As System.Windows.Forms.CheckBox
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 显示隐藏界面ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents cbEnhance As System.Windows.Forms.CheckBox
 
 End Class

@@ -7,7 +7,7 @@ Public Class frmMain
         btnHide.Enabled = True
         btnStart.Enabled = False
         canBeClose = -1
-        Me.TopMost = True
+        'Me.TopMost = True
     End Sub
     Protected Overrides Sub OnLoad(ByVal e As System.EventArgs)
         MyBase.OnLoad(e)
@@ -27,6 +27,7 @@ Public Class frmMain
     Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = canBeClose
         Me.Visible = False
+        If pref_enhance Then frmShadowMain.tmrTopMost.Enabled = True
         mdNI.BalloonTipText = "单击显示/隐藏主界面" & vbCrLf & "右键可以弹出菜单"
         mdNI.BalloonTipTitle = Me.Text
         mdNI.ShowBalloonTip(5000)
@@ -40,6 +41,7 @@ Public Class frmMain
         tbTrans.Value = pref_percent
         mdNI.Icon = Me.Icon
         cbCover.Checked = pref_covertaskbar
+        cbEnhance.Checked = pref_enhance
     End Sub
 
     Private Sub tbTrans_Scroll(sender As Object, e As EventArgs) Handles tbTrans.Scroll
@@ -50,7 +52,9 @@ Public Class frmMain
     Private Sub btnChange_Click(sender As Object, e As EventArgs) Handles btnChange.Click
         cdBG.Color = pbColor.BackColor
         'cdBG.SolidColorOnly = True
+        Me.TopMost = True
         cdBG.ShowDialog()
+        Me.TopMost = False
         pbColor.BackColor = cdBG.Color
         pref_color = pbColor.BackColor.ToArgb
         doChange_BackColor()
@@ -59,6 +63,9 @@ Public Class frmMain
     Private Sub mdNI_MouseClick(sender As Object, e As MouseEventArgs) Handles mdNI.MouseClick
         If e.Button = Windows.Forms.MouseButtons.Left Then
             Me.Visible = Not Me.Visible
+            If pref_enhance Then
+                frmShadowMain.tmrTopMost.Enabled = Not Me.Visible
+            End If
         ElseIf e.Button = Windows.Forms.MouseButtons.Right Then
             cmsRight.Show(New Point(MousePosition.X - cmsRight.Width / 2, MousePosition.Y), ToolStripDropDownDirection.Default)
         End If
@@ -90,5 +97,20 @@ Public Class frmMain
 
     Private Sub 显示隐藏界面ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 显示隐藏界面ToolStripMenuItem.Click
         Me.Visible = Not Me.Visible
+        If pref_enhance Then
+            frmShadowMain.tmrTopMost.Enabled = Not Me.Visible
+        End If
+    End Sub
+
+    Private Sub cbEnhance_Click(sender As Object, e As EventArgs) Handles cbEnhance.Click
+        If cbEnhance.Checked = True Then
+            MsgBox("增强模式已开启，关闭本窗口将开始生效。本窗口打开时将临时失效。", MsgBoxStyle.OkOnly, "使用提示")
+            'cbEnhance.Checked = False
+            pref_enhance = True
+            Exit Sub
+        Else
+            'cbEnhance.Checked = True
+            pref_enhance = False
+        End If
     End Sub
 End Class

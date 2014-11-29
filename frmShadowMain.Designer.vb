@@ -22,7 +22,12 @@ Partial Class frmShadowMain
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.tmrTopMost = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
+        '
+        'tmrTopMost
+        '
         '
         'frmShadowMain
         '
@@ -39,4 +44,5 @@ Partial Class frmShadowMain
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents tmrTopMost As System.Windows.Forms.Timer
 End Class
