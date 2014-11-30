@@ -33,6 +33,7 @@ Partial Class frmMain
         Me.pbColor = New System.Windows.Forms.PictureBox()
         Me.btnChange = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbEnhance = New System.Windows.Forms.CheckBox()
         Me.cbCover = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cdBG = New System.Windows.Forms.ColorDialog()
@@ -44,7 +45,6 @@ Partial Class frmMain
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.llbOfficialSite = New System.Windows.Forms.LinkLabel()
         Me.llbAbout = New System.Windows.Forms.LinkLabel()
-        Me.cbEnhance = New System.Windows.Forms.CheckBox()
         CType(Me.tbTrans, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbColor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -142,6 +142,16 @@ Partial Class frmMain
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "外观选项"
         '
+        'cbEnhance
+        '
+        Me.cbEnhance.AutoSize = True
+        Me.cbEnhance.Location = New System.Drawing.Point(142, 103)
+        Me.cbEnhance.Name = "cbEnhance"
+        Me.cbEnhance.Size = New System.Drawing.Size(72, 16)
+        Me.cbEnhance.TabIndex = 13
+        Me.cbEnhance.Text = "增强模式"
+        Me.cbEnhance.UseVisualStyleBackColor = True
+        '
         'cbCover
         '
         Me.cbCover.AutoSize = True
@@ -217,16 +227,6 @@ Partial Class frmMain
         Me.llbAbout.TabIndex = 12
         Me.llbAbout.TabStop = True
         Me.llbAbout.Text = "关于"
-        '
-        'cbEnhance
-        '
-        Me.cbEnhance.AutoSize = True
-        Me.cbEnhance.Location = New System.Drawing.Point(142, 103)
-        Me.cbEnhance.Name = "cbEnhance"
-        Me.cbEnhance.Size = New System.Drawing.Size(72, 16)
-        Me.cbEnhance.TabIndex = 13
-        Me.cbEnhance.Text = "增强模式"
-        Me.cbEnhance.UseVisualStyleBackColor = True
         '
         'frmMain
         '

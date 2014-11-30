@@ -104,7 +104,7 @@ Public Class frmMain
 
     Private Sub cbEnhance_Click(sender As Object, e As EventArgs) Handles cbEnhance.Click
         If cbEnhance.Checked = True Then
-            MsgBox("增强模式已开启，关闭本窗口将开始生效。本窗口打开时将临时失效。", MsgBoxStyle.OkOnly, "使用提示")
+            MsgBox("增强模式已开启，关闭本窗口将开始生效。本窗口打开时将临时失效。" & vbCrLf & "本模式用于解决某些情况下优先级不足的问题导致某些窗口不能被覆盖", MsgBoxStyle.OkOnly, "使用提示")
             'cbEnhance.Checked = False
             pref_enhance = True
             Exit Sub
@@ -113,4 +113,5 @@ Public Class frmMain
             pref_enhance = False
         End If
     End Sub
+
 End Class
