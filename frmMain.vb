@@ -82,13 +82,9 @@ Public Class frmMain
     End Sub
 
     Private Sub llbOfficialSite_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbOfficialSite.LinkClicked
-        Process.Start("http://ndev.cu.cc")
+        Process.Start("http://nimitzdev.org")
     End Sub
 
-    Private Sub llbAbout_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAbout.LinkClicked
-        frmAbout.ShowDialog()
-        frmAbout.Dispose()
-    End Sub
 
     Private Sub cbCover_CheckedChanged(sender As Object, e As EventArgs) Handles cbCover.CheckedChanged
         pref_covertaskbar = cbCover.Checked

@@ -44,7 +44,6 @@ Partial Class frmMain
         Me.显示隐藏界面ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.llbOfficialSite = New System.Windows.Forms.LinkLabel()
-        Me.llbAbout = New System.Windows.Forms.LinkLabel()
         CType(Me.tbTrans, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbColor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -205,7 +204,7 @@ Partial Class frmMain
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.TabIndex = 10
-        Me.btnUpdate.Text = "查找新版本"
+        Me.btnUpdate.Text = "关于与更新"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'llbOfficialSite
@@ -218,22 +217,11 @@ Partial Class frmMain
         Me.llbOfficialSite.TabStop = True
         Me.llbOfficialSite.Text = "访问官网"
         '
-        'llbAbout
-        '
-        Me.llbAbout.AutoSize = True
-        Me.llbAbout.Location = New System.Drawing.Point(241, 172)
-        Me.llbAbout.Name = "llbAbout"
-        Me.llbAbout.Size = New System.Drawing.Size(29, 12)
-        Me.llbAbout.TabIndex = 12
-        Me.llbAbout.TabStop = True
-        Me.llbAbout.Text = "关于"
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(341, 197)
-        Me.Controls.Add(Me.llbAbout)
         Me.Controls.Add(Me.llbOfficialSite)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.GroupBox1)
@@ -271,7 +259,6 @@ Partial Class frmMain
     Friend WithEvents tsmiExit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents llbOfficialSite As System.Windows.Forms.LinkLabel
-    Friend WithEvents llbAbout As System.Windows.Forms.LinkLabel
     Friend WithEvents cbCover As System.Windows.Forms.CheckBox
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 显示隐藏界面ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
